@@ -3,6 +3,7 @@
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
 RED='\033[0;31m'
+GREEN='\033[0;32m'
 NC='\033[0m'
 
 print_banner() {
@@ -24,6 +25,10 @@ print_banner() {
 
 print_msg() {
     echo -e "  ${BLUE}→${NC} $1"
+}
+
+print_success() {
+    echo -e "  ${GREEN}✓${NC} $1"
 }
 
 print_error() {
@@ -63,6 +68,9 @@ install_docker() {
     sudo systemctl start docker >/dev/null 2>&1
     sudo systemctl enable docker >/dev/null 2>&1
     sudo usermod -aG docker $USER >/dev/null 2>&1
+    
+    print_success "Docker installation completed"
+    echo
 }
 
 print_banner
@@ -71,8 +79,14 @@ if [ "$EUID" -ne 0 ]; then
     print_error "Please run with sudo privileges"
 fi
 
+echo -e "  ${BLUE}Checking system requirements...${NC}"
 if ! command -v docker &> /dev/null; then
+    print_msg "Docker not found. Starting installation..."
+    echo
     install_docker
+else
+    print_success "Docker already installed"
+    echo
 fi
 
 while true; do

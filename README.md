@@ -15,7 +15,7 @@ This script automates the installation process of Titan Edge node by:
 
 Before installation, you need to register to get your hash:
 
-1. Visit [Titan Edge Registration](https://test1.titannet.io/intiveRegister?code=zhNcuF)
+1. Visit [Titan Edge Registration](https://test1.titannet.io/intiveRegister?code=anqbbB)
 2. Complete the registration process
 3. After registration, obtain your hash:
    - Go to Console
@@ -42,19 +42,19 @@ Before installation, you need to register to get your hash:
 
 1. Register and get your hash:
 
-   - Register at [Titan Edge Registration](https://test1.titannet.io/intiveRegister?code=zhNcuF)
+   - Register at [Titan Edge Registration](https://test1.titannet.io/intiveRegister?code=anqbbB)
    - Go to Console > Node Management > Get Identity Code
 
 2. Run this single command to download and execute the installation script:
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/Galkurta/Titan-Network/main/install.sh -o install.sh && chmod +x install.sh && sudo ./install.sh
+curl -fsSL https://raw.githubusercontent.com/pvsairam/Titan-Network/main/install.sh -o install.sh && chmod +x install.sh && sudo ./install.sh
 ```
 
 Or using wget:
 
 ```bash
-wget https://raw.githubusercontent.com/Galkurta/Titan-Network/main/install.sh && chmod +x install.sh && sudo ./install.sh
+wget https://raw.githubusercontent.com/pvsairam/Titan-Network/main/install.sh && chmod +x install.sh && sudo ./install.sh
 ```
 
 The script will prompt you to enter your hash during installation.
